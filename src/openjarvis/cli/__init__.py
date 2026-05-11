@@ -2,46 +2,71 @@
 
 from __future__ import annotations
 
+import importlib
+
 import click
 
 import openjarvis
-from openjarvis.cli.add_cmd import add
-from openjarvis.cli.agent_cmd import agent
-from openjarvis.cli.ask import ask
-from openjarvis.cli.bench_cmd import bench
-from openjarvis.cli.channel_cmd import channel
-from openjarvis.cli.channels_cmd import channels
-from openjarvis.cli.chat_cmd import chat
-from openjarvis.cli.compose_cmd import compose
-from openjarvis.cli.config_cmd import config
-from openjarvis.cli.connect_cmd import connect
-from openjarvis.cli.daemon_cmd import restart, start, status, stop
-from openjarvis.cli.deep_research_setup_cmd import deep_research_setup
-from openjarvis.cli.digest_cmd import digest
-from openjarvis.cli.doctor_cmd import doctor
-from openjarvis.cli.eval_cmd import eval_group
-from openjarvis.cli.feedback_cmd import feedback_group
-from openjarvis.cli.gateway_cmd import gateway
-from openjarvis.cli.host_cmd import host
-from openjarvis.cli.init_cmd import init
-from openjarvis.cli.memory_cmd import memory
-from openjarvis.cli.model import model
-from openjarvis.cli.operators_cmd import operators
-from openjarvis.cli.optimize_cmd import optimize_group
-from openjarvis.cli.quickstart_cmd import quickstart
-from openjarvis.cli.registry_cmd import registry
-from openjarvis.cli.scan_cmd import scan
-from openjarvis.cli.scheduler_cmd import scheduler
-from openjarvis.cli.serve import serve
-from openjarvis.cli.skill_cmd import skill
-from openjarvis.cli.telemetry_cmd import telemetry
-from openjarvis.cli.tool_cmd import tool
-from openjarvis.cli.vault_cmd import vault
-from openjarvis.cli.workflow_cmd import workflow
-from openjarvis.learning.distillation.cli import learning_group
+
+_COMMAND_SPECS: dict[str, tuple[str, str]] = {
+    "add": ("openjarvis.cli.add_cmd", "add"),
+    "agents": ("openjarvis.cli.agent_cmd", "agent"),
+    "ask": ("openjarvis.cli.ask", "ask"),
+    "bench": ("openjarvis.cli.bench_cmd", "bench"),
+    "channel": ("openjarvis.cli.channel_cmd", "channel"),
+    "channels": ("openjarvis.cli.channels_cmd", "channels"),
+    "chat": ("openjarvis.cli.chat_cmd", "chat"),
+    "compose": ("openjarvis.cli.compose_cmd", "compose"),
+    "config": ("openjarvis.cli.config_cmd", "config"),
+    "connect": ("openjarvis.cli.connect_cmd", "connect"),
+    "deep-research-setup": ("openjarvis.cli.deep_research_setup_cmd", "deep_research_setup"),
+    "digest": ("openjarvis.cli.digest_cmd", "digest"),
+    "doctor": ("openjarvis.cli.doctor_cmd", "doctor"),
+    "eval": ("openjarvis.cli.eval_cmd", "eval_group"),
+    "feedback": ("openjarvis.cli.feedback_cmd", "feedback_group"),
+    "gateway": ("openjarvis.cli.gateway_cmd", "gateway"),
+    "host": ("openjarvis.cli.host_cmd", "host"),
+    "init": ("openjarvis.cli.init_cmd", "init"),
+    "learning": ("openjarvis.learning.distillation.cli", "learning_group"),
+    "memory": ("openjarvis.cli.memory_cmd", "memory"),
+    "model": ("openjarvis.cli.model", "model"),
+    "operators": ("openjarvis.cli.operators_cmd", "operators"),
+    "optimize": ("openjarvis.cli.optimize_cmd", "optimize_group"),
+    "quickstart": ("openjarvis.cli.quickstart_cmd", "quickstart"),
+    "registry": ("openjarvis.cli.registry_cmd", "registry"),
+    "research": ("openjarvis.cli.deep_research_setup_cmd", "deep_research_setup"),
+    "scan": ("openjarvis.cli.scan_cmd", "scan"),
+    "scheduler": ("openjarvis.cli.scheduler_cmd", "scheduler"),
+    "serve": ("openjarvis.cli.serve", "serve"),
+    "skill": ("openjarvis.cli.skill_cmd", "skill"),
+    "telemetry": ("openjarvis.cli.telemetry_cmd", "telemetry"),
+    "tool": ("openjarvis.cli.tool_cmd", "tool"),
+    "vault": ("openjarvis.cli.vault_cmd", "vault"),
+    "workflow": ("openjarvis.cli.workflow_cmd", "workflow"),
+    "start": ("openjarvis.cli.daemon_cmd", "start"),
+    "stop": ("openjarvis.cli.daemon_cmd", "stop"),
+    "restart": ("openjarvis.cli.daemon_cmd", "restart"),
+    "status": ("openjarvis.cli.daemon_cmd", "status"),
+}
 
 
-@click.group(help="OpenJarvis — modular AI assistant backend")
+class LazyGroup(click.Group):
+    def list_commands(self, ctx: click.Context):
+        return sorted(_COMMAND_SPECS)
+
+    def get_command(self, ctx: click.Context, cmd_name: str):
+        spec = _COMMAND_SPECS.get(cmd_name)
+        if spec is None:
+            return None
+        module_name, attr_name = spec
+        try:
+            module = importlib.import_module(module_name)
+        except ImportError:
+            return None
+        return getattr(module, attr_name)
+
+
+@click.group(cls=LazyGroup, help="OpenJarvis — modular AI assistant backend")
 @click.version_option(version=openjarvis.__version__, prog_name="jarvis")
 @click.option("--verbose", is_flag=True, default=False, help="Enable debug logging")
 @click.option("--quiet", is_flag=True, default=False, help="Suppress non-error output")
@@ -60,61 +85,6 @@ def cli(ctx: click.Context, verbose: bool, quiet: bool) -> None:
         from openjarvis.cli._version_check import check_for_updates
 
         check_for_updates(ctx.invoked_subcommand)
-
-
-cli.add_command(init, "init")
-cli.add_command(ask, "ask")
-cli.add_command(chat, "chat")
-cli.add_command(serve, "serve")
-cli.add_command(model, "model")
-cli.add_command(memory, "memory")
-cli.add_command(telemetry, "telemetry")
-cli.add_command(bench, "bench")
-cli.add_command(channel, "channel")
-cli.add_command(channels, "channels")
-cli.add_command(scheduler, "scheduler")
-cli.add_command(doctor, "doctor")
-cli.add_command(agent, "agents")
-cli.add_command(workflow, "workflow")
-cli.add_command(skill, "skill")
-cli.add_command(start, "start")
-cli.add_command(stop, "stop")
-cli.add_command(restart, "restart")
-cli.add_command(status, "status")
-cli.add_command(vault, "vault")
-cli.add_command(add, "add")
-cli.add_command(operators, "operators")
-cli.add_command(eval_group, "eval")
-cli.add_command(host, "host")
-cli.add_command(quickstart, "quickstart")
-cli.add_command(optimize_group, "optimize")
-cli.add_command(feedback_group, "feedback")
-cli.add_command(compose, "compose")
-cli.add_command(gateway, "gateway")
-cli.add_command(tool, "tool")
-cli.add_command(registry, "registry")
-cli.add_command(config, "config")
-cli.add_command(scan, "scan")
-cli.add_command(connect, "connect")
-cli.add_command(digest, "digest")
-cli.add_command(deep_research_setup, "deep-research-setup")
-cli.add_command(deep_research_setup, "research")
-cli.add_command(learning_group, "learning")
-
-# Gateway CLI commands (lazy import to avoid pulling starlette)
-try:
-    from openjarvis.cli.auth_cmd import auth
-
-    cli.add_command(auth, "auth")
-except ImportError:
-    pass
-
-try:
-    from openjarvis.cli.tunnel_cmd import tunnel
-
-    cli.add_command(tunnel, "tunnel")
-except ImportError:
-    pass
 
 
 def main() -> None:

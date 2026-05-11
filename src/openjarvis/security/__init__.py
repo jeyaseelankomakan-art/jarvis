@@ -4,11 +4,12 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass
+from importlib import import_module
 from typing import Any, Optional
+from typing import TYPE_CHECKING
 
 from openjarvis.core.events import EventBus
 from openjarvis.security._stubs import BaseScanner
-from openjarvis.security.audit import AuditLogger
 from openjarvis.security.file_policy import (
     DEFAULT_SENSITIVE_PATTERNS,
     filter_sensitive_paths,
@@ -27,6 +28,10 @@ from openjarvis.security.types import (
 )
 
 logger = logging.getLogger(__name__)
+
+if TYPE_CHECKING:
+    from openjarvis.security.audit import AuditLogger
+    from openjarvis.security.capabilities import CapabilityPolicy
 
 
 @dataclass
@@ -86,6 +91,7 @@ def setup_security(
     # Audit logger
     audit = None
     try:
+        AuditLogger = import_module("openjarvis.security.audit").AuditLogger
         audit = AuditLogger(
             db_path=config.security.audit_log_path,
             bus=bus,
@@ -121,3 +127,29 @@ __all__ = [
     "is_sensitive_file",
     "setup_security",
 ]
+
+
+def __getattr__(name: str):
+    if name == "AuditLogger":
+        return import_module("openjarvis.security.audit").AuditLogger
+    if name == "CapabilityPolicy":
+        return import_module("openjarvis.security.capabilities").CapabilityPolicy
+    if name in {
+        "DEFAULT_SENSITIVE_PATTERNS",
+        "filter_sensitive_paths",
+        "is_sensitive_file",
+        "GuardrailsEngine",
+        "SecurityBlockError",
+        "PIIScanner",
+        "SecretScanner",
+        "RedactionMode",
+        "ScanFinding",
+        "ScanResult",
+        "SecurityEvent",
+        "SecurityEventType",
+        "ThreatLevel",
+        "check_ssrf",
+        "is_private_ip",
+    }:
+        return globals()[name]
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

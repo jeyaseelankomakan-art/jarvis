@@ -36,6 +36,7 @@ _MATH_FUNCS = {
     "max": max,
     "sqrt": math.sqrt,
     "log": math.log,
+    "ln": math.log,
     "log10": math.log10,
     "log2": math.log2,
     "sin": math.sin,
@@ -84,7 +85,7 @@ def _safe_eval_node(node: ast.AST) -> Any:
             val = _MATH_FUNCS[name]
             if isinstance(val, (int, float)):
                 return val
-        raise ValueError(f"Unknown variable: {name}")
+        raise ValueError(f"unknown variable: {name}")
     raise ValueError(f"Unsupported expression type: {type(node).__name__}")
 
 
@@ -94,12 +95,22 @@ def safe_eval(expression: str) -> float:
         from openjarvis._rust_bridge import get_rust_module
 
         _rust = get_rust_module()
-        return float(_rust.CalculatorTool().execute(expression))
-    except ImportError:
+        rust_expr = expression.replace("**", "^") # Rust meval crate usually prefers ^ for power
+        res = _rust.CalculatorTool().execute(rust_expr)
+        if res.startswith("Error"):
+            raise ValueError(res)
+        return float(res)
+    except (ImportError, ValueError):
         import ast as _ast
 
-        tree = _ast.parse(expression, mode="eval")
-        return float(_safe_eval_node(tree.body))
+        py_expr = expression.replace("^", "**")
+        try:
+            tree = _ast.parse(py_expr, mode="eval")
+            return float(_safe_eval_node(tree.body))
+        except ZeroDivisionError:
+            return float("inf")
+        except SyntaxError as e:
+            raise ValueError(f"Syntax error: {e}")
 
 
 @ToolRegistry.register("calculator")

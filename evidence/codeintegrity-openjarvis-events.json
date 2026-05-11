@@ -1,0 +1,128 @@
+﻿[
+    {
+        "TimeCreated":  "\/Date(1777198393488)\/",
+        "Id":  3077,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Windows\\Temp\\openjarvis-cargo-target\\debug\\build\\getrandom-5bf9bdaaa869a509\\build-script-build.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198393487)\/",
+        "Id":  3033,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Windows\\Temp\\openjarvis-cargo-target\\debug\\build\\getrandom-5bf9bdaaa869a509\\build-script-build.exe that did not meet the Enterprise signing level requirements."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198392882)\/",
+        "Id":  3077,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Windows\\Temp\\openjarvis-cargo-target\\debug\\build\\quote-49ad6947ff1b3afe\\build-script-build.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198392880)\/",
+        "Id":  3033,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Windows\\Temp\\openjarvis-cargo-target\\debug\\build\\quote-49ad6947ff1b3afe\\build-script-build.exe that did not meet the Enterprise signing level requirements."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198052505)\/",
+        "Id":  3077,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\AppData\\Local\\openjarvis-cargo-target\\debug\\build\\serde-de27166715aa633a\\build-script-build.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198052504)\/",
+        "Id":  3033,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\AppData\\Local\\openjarvis-cargo-target\\debug\\build\\serde-de27166715aa633a\\build-script-build.exe that did not meet the Enterprise signing level requirements."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198045317)\/",
+        "Id":  3077,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\AppData\\Local\\openjarvis-cargo-target\\debug\\build\\serde_core-5d9a3977988005ca\\build-script-build.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198045315)\/",
+        "Id":  3033,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\AppData\\Local\\openjarvis-cargo-target\\debug\\build\\serde_core-5d9a3977988005ca\\build-script-build.exe that did not meet the Enterprise signing level requirements."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198026804)\/",
+        "Id":  3077,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\AppData\\Local\\openjarvis-cargo-target\\debug\\build\\parking_lot_core-e71f3f0d12781e68\\build-script-build.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198026802)\/",
+        "Id":  3033,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\AppData\\Local\\openjarvis-cargo-target\\debug\\build\\parking_lot_core-e71f3f0d12781e68\\build-script-build.exe that did not meet the Enterprise signing level requirements."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198002126)\/",
+        "Id":  3077,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\OneDrive\\Documents\\pro\\jarvis\\OpenJarvis\\rust\\target\\debug\\build\\parking_lot_core-e71f3f0d12781e68\\build-script-build.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198002125)\/",
+        "Id":  3033,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\OneDrive\\Documents\\pro\\jarvis\\OpenJarvis\\rust\\target\\debug\\build\\parking_lot_core-e71f3f0d12781e68\\build-script-build.exe that did not meet the Enterprise signing level requirements."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198000828)\/",
+        "Id":  3077,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\OneDrive\\Documents\\pro\\jarvis\\OpenJarvis\\rust\\target\\debug\\build\\getrandom-5bf9bdaaa869a509\\build-script-build.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+    },
+    {
+        "TimeCreated":  "\/Date(1777198000826)\/",
+        "Id":  3033,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\OneDrive\\Documents\\pro\\jarvis\\OpenJarvis\\rust\\target\\debug\\build\\getrandom-5bf9bdaaa869a509\\build-script-build.exe that did not meet the Enterprise signing level requirements."
+    },
+    {
+        "TimeCreated":  "\/Date(1777197999630)\/",
+        "Id":  3077,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\OneDrive\\Documents\\pro\\jarvis\\OpenJarvis\\rust\\target\\debug\\build\\quote-49ad6947ff1b3afe\\build-script-build.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+    },
+    {
+        "TimeCreated":  "\/Date(1777197999629)\/",
+        "Id":  3033,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\OneDrive\\Documents\\pro\\jarvis\\OpenJarvis\\rust\\target\\debug\\build\\quote-49ad6947ff1b3afe\\build-script-build.exe that did not meet the Enterprise signing level requirements."
+    },
+    {
+        "TimeCreated":  "\/Date(1777197998906)\/",
+        "Id":  3077,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\OneDrive\\Documents\\pro\\jarvis\\OpenJarvis\\rust\\target\\debug\\build\\windows_x86_64_msvc-d0e68f3f631cdb9a\\build-script-build.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6})."
+    },
+    {
+        "TimeCreated":  "\/Date(1777197998904)\/",
+        "Id":  3033,
+        "LevelDisplayName":  "Error",
+        "ProviderName":  "Microsoft-Windows-CodeIntegrity",
+        "Message":  "Code Integrity determined that a process (\\Device\\HarddiskVolume3\\Users\\jkoma\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe) attempted to load \\Device\\HarddiskVolume3\\Users\\jkoma\\OneDrive\\Documents\\pro\\jarvis\\OpenJarvis\\rust\\target\\debug\\build\\windows_x86_64_msvc-d0e68f3f631cdb9a\\build-script-build.exe that did not meet the Enterprise signing level requirements."
+    }
+]
